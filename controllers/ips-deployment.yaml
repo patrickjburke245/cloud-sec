@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ips-deployment
+  labels:
+    app: ips
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ips
+  template:
+    metadata:
+      labels:
+        app: ips
+    spec:
+      containers:
+      - name: ips
+        image: 
+        ports:
+        - containerPort: 8080
